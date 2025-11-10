@@ -1,0 +1,31 @@
+module.exports = (sequelize, DataTypes) => {
+  const Categoria = sequelize.define('Categoria', {
+    id_categoria: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    nombre_categoria: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
+    },
+    descripcion: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    estado: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    }
+  }, {
+    tableName: 'categorias',
+    timestamps: true,
+    createdAt: 'fecha_creacion',
+    updatedAt: false
+  });
+
+  return Categoria;
+};
