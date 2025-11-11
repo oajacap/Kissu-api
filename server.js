@@ -83,10 +83,8 @@ app.use((err, req, res, next) => {
 
 const startServer = async () => {
     try {
-        if (process.env.NODE_ENV === 'development') {
-            await db.sequelize.sync({ alter: false });
-            console.log('[OK] Base de datos sincronizada');
-        }
+        await db.sequelize.sync({ alter: false });
+        console.log('[OK] Base de datos sincronizada');
         
         await db.sequelize.authenticate();
         console.log('[OK] Conexión exitosa a la base de datos MySQL con Sequelize');
