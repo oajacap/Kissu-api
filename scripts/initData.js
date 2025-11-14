@@ -1,3 +1,4 @@
+
 require('dotenv').config();
 const db = require('../src/models');
 
@@ -26,8 +27,8 @@ const initializeData = async () => {
             await db.Usuario.create({
                 nombre: 'Admin',
                 apellido: 'Sistema',
-                email: 'pablo@kissu.com',
-                password: 'admin321',
+                email: 'admin@kissu.com',
+                password: 'admin123',
                 telefono: '5555-5555',
                 id_rol: adminRole.id_rol,
                 estado: true
